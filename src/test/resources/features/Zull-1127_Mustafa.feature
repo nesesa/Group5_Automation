@@ -17,3 +17,13 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       And User clicks SEND button on Message page
       Then User sees that Employee mail address on Activity Stream page
 
+  @AC2
+  Scenario: Attaching a link to the specified text.
+    When User is on MESSAGE page
+    And User click Link button
+    And User write a description into the "<Text>" box
+    And User write the link about the description into the "<Link>" box
+    And User clicks Save button
+    Then User sees the "<Text>" is written as a link in the Message box
+    And User takes his mouse over the "<Text>" in the Message box
+    Then User sees the "<Link>" that he wrote into the Link box before
