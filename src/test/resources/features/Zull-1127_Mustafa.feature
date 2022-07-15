@@ -43,10 +43,26 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     And User enter "<URL>" address of a YouTube video and a Vimeo video
     And User clicks Save button on the opened popup
     And User clicks SEND button on Message page
-    And User sees the video on Activity Stream
+    Then User sees the video on Activity Stream
 
     Examples: Users enters links written below
 
     |URL|
     |https://www.youtube.com/watch?v=CYYtLXfquy0  |
     |https://vimeo.com/249226357                  |
+
+
+  @AC4
+  Scenario Outline:Adding quotes.
+    When User is on MESSAGE page
+    And User click Quote Text button
+    And User write a "<Quotes>" into the highlighted row
+    And User clicks SEND button on Message page
+    Then User sees the "<Quotes>" in Activity Stream
+
+    Examples: Users enters Quotes written below
+
+      | Quotes          |
+      | Mustafa Ornek   |
+      | Salih Ornek     |
+      | Seygullah Ornek |
