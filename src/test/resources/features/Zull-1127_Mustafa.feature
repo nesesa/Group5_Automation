@@ -18,7 +18,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       Then User sees that Employee mail address on Activity Stream page
 
   @AC2
-  Scenario: Attaching a link to the specified text.
+  Scenario Outline: Attaching a link to the specified text.
     When User is on MESSAGE page
     And User click Link button
     And User write a description into the "<Text>" box
@@ -27,3 +27,26 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     Then User sees the "<Text>" is written as a link in the Message box
     And User takes his mouse over the "<Text>" in the Message box
     Then User sees the "<Link>" that he wrote into the Link box before
+
+    Examples: Users enters texts and links written below
+
+    |Text           |Link|
+    |ITU Mech. Eng. |https://mkn.itu.edu.tr/en/home |
+    |Google         |https://www.google.com/        |
+    |Yandex         |https://ceviri.yandex.com.tr/  |
+
+
+  @AC3
+  Scenario Outline:Inserting YouTube and Vimeo videos.
+    When User is on MESSAGE page
+    And User click Insert Video button
+    And User enter "<URL>" address of a YouTube video and a Vimeo video
+    And User clicks Save button on the opened popup
+    And User clicks SEND button on Message page
+    And User sees the video on Activity Stream
+
+    Examples: Users enters links written below
+
+    |URL|
+    |https://www.youtube.com/watch?v=CYYtLXfquy0  |
+    |https://vimeo.com/249226357                  |
