@@ -82,6 +82,25 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
 
       | Tags      |
       | Isparta   |
+      | Antalya   |
       | Istanbul  |
       | Ankara    |
 
+  @AC6
+  Scenario Outline:Removing tags before sending the message.
+    When User is on MESSAGE page
+    And User writes something into the message box
+    And User click Add Tag button
+    And User writes "<Tags>" into the highlighted row
+    And User click Add button
+    And User click X sign of the tag text into the Tags row
+    Then User cant see the "<Tags>" in the Tags row
+
+
+    Examples: Users enters Quotes written below
+
+      | Tags      |
+      | Isparta   |
+      | Antalya   |
+      | Istanbul  |
+      | Ankara    |
