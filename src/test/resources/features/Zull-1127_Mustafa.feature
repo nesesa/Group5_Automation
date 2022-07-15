@@ -65,4 +65,23 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       | Quotes          |
       | Mustafa Ornek   |
       | Salih Ornek     |
-      | Seygullah Ornek |
+      | Seyfullah Ornek |
+
+
+  @AC5
+  Scenario Outline:Adding tags to messages.
+    When User is on MESSAGE page
+    And User writes something into the message box
+    And User click Add Tag button
+    And User writes "<Tags>" into the highlighted row
+    And User click Add button
+    And User clicks SEND button on Message page
+    Then User sees the "<Tags>" in Activity Stream
+
+    Examples: Users enters Quotes written below
+
+      | Tags      |
+      | Isparta   |
+      | Istanbul  |
+      | Ankara    |
+
