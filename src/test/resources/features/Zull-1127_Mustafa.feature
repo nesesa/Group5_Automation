@@ -8,7 +8,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
 
 
 
-  @AC1
+  @AC1 @wip
     Scenario: Adding mentions about only department employees.
       When User is on MESSAGE page
       And User click Add Mention button
@@ -21,8 +21,8 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
   Scenario Outline: Attaching a link to the specified text.
     When User is on MESSAGE page
     And User click Link button
-    And User write a description into the "<Text>" box
-    And User write the link about the description into the "<Link>" box
+    And User write a description into the "<Text>" label
+    And User write the link about the description into the "<Link>" label
     And User clicks Save button
     Then User sees the "<Text>" is written as a link in the Message box
     And User takes his mouse over the "<Text>" in the Message box

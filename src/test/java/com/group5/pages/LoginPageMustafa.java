@@ -12,7 +12,7 @@ public class LoginPageMustafa {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    // MainPage Login
+    // Background MainPage Login
 
     @FindBy(xpath = "//input[@placeholder='Login']")
     public WebElement Username;
@@ -23,10 +23,7 @@ public class LoginPageMustafa {
     @FindBy(xpath = "//input[@value='Log In']")
     public WebElement Login;
 
-    // Message Page
 
-    @FindBy(xpath = "//*[@id=\"feed-add-post-form-tab-message\"]/span")
-    public WebElement EVENT;
 
 
 
