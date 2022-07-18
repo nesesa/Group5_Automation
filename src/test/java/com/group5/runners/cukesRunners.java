@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features/test.feature",
         glue = "com/group5/step_defs",
-        dryRun = true,
+        dryRun = false,
         tags = "",
         publish = false
 
