@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         },
-        features = "src/test/resources/features/test.feature",
-        glue = "com/group5/step_defs/Step_Definitions.java",
+        features = "src/test/java/com/group5/runners",
+        glue = "com/group5/step_defs",
         dryRun = false,
         tags = "",
         publish = false
