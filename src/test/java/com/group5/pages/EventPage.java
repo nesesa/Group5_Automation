@@ -36,4 +36,7 @@ public class EventPage {
     public WebElement toTimeZone;
     @FindBy(xpath = "//input[@id='event-full-daycal_3Jcl']")
     public  WebElement allDayCheckBox;
+
+
+
 }
