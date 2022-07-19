@@ -29,6 +29,7 @@ public class EventPage {
     @FindBy(xpath = "//span[contains(text(),'Specify time zone')]")
     public  WebElement specifiedTimeSelectBox;
     @FindBy(css = "#feed-cal-tz-switchcal_3Jcl")
+
     public WebElement SpecifyTimezone;
     @FindBy(css = "#feed-cal-tz-fromcal_3Jcl")
     public WebElement fromTimeZone;
@@ -36,6 +37,20 @@ public class EventPage {
     public WebElement toTimeZone;
     @FindBy(xpath = "//input[@id='event-full-daycal_3Jcl']")
     public  WebElement allDayCheckBox;
+
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
+    public  WebElement sendButton;
+    @FindBy(xpath = "//span[contains(text(),'05/15/2022')]")
+    public  WebElement activeStreamDisplay;
+
+
+
+    @FindBy(xpath = "//div[@class='feed-event-reminder-collapsed']")
+    public  WebElement setReminderCheckBox;
+    @FindBy(xpath = "//input[@id='event-remind_countcal_3Jcl']")
+    public WebElement setReminderBox;
+    @FindBy(xpath = "//select[@id='event-remind_typecal_3Jcl']")
+    public WebElement setReminderDropdown;
 
 
 
