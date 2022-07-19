@@ -95,12 +95,17 @@ public class EventStepDef {
 
         eventPage.setReminderCheckBox.click();
     }
+    @When("User fills out  {int} to the number box")
+    public void userFillsOutToTheNumberBox(int number) {
+        eventPage.setReminderBox.clear();
+        eventPage.setReminderBox.sendKeys("25");
+    }
     @When("User fills out  {string} to the number box")
-    public void userFillsOutToTheNumberBox(String number) {
+    public void userFillsOutToTheNumberBox(String letter) {
         BrowserUtils.sleep(2);
         eventPage.setReminderBox.clear();
-        number="366";
-        eventPage.setReminderBox.sendKeys(number);
+        letter="abc";
+        eventPage.setReminderBox.sendKeys(letter);
     } ;
     @When("User chooses {string} from time dropdown")
     public void user_chooses_from_time_dropdown(String time) {
@@ -117,14 +122,15 @@ public class EventStepDef {
 
 
     @Then("User should not see much {string} in number box")
-    public void userShouldNotSeeMuchInNumberBox(String number) {
+    public void userShouldNotSeeMuchInNumberBox(String letter) {
 
-        //eventPage.setReminderBox.sendKeys(number);
-        String expected="366";
-        String actual=number;
+        //eventPage.setReminderBox.sendKeys(letter);
+        String expected="abc";
+        String actual=eventPage.setReminderBox.getText();
         System.out.println("actual = " + actual);
         System.out.println("expected = " + expected);
         Assert.assertEquals(actual,expected);
+
 
 
     }
