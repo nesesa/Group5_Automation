@@ -4,27 +4,33 @@ import com.group5.pages.EventPage;
 import com.group5.utilities.BrowserUtils;
 import com.group5.utilities.ConfigurationReader;
 import com.group5.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class EventStepDef {
     EventPage eventPage=new EventPage();
     @Given("User is on Home Page")
-    public void user_is_on_home_page() {
+    public void userIsOnHomePage() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         eventPage.inputEmail.sendKeys("helpdesk1@cybertekschool.com");
         eventPage.inputPassword.sendKeys("UserUser");
         eventPage.logInButton.click();
     }
-    @Given("User navigates to Event tab")
+    @When("User navigates to Event tab")
     public void user_navigates_to_event_tab() {
         eventPage.eventButton.click();
+
     }
-    @When("User adds Event start date and time")
-    public void user_adds_event_start_date_and_time() {
+
+    @When("User adds Event star  date and time")
+    public void userAddsEventStarDateAndTime() {
         String startDate = "08/15/2022";
         String startTime = "10:30 am";
         eventPage.startDate.clear();
@@ -32,8 +38,8 @@ public class EventStepDef {
         eventPage.startTime.clear();
         eventPage.startTime.sendKeys(startTime);
     }
-    @When("User adds Event end date and time")
-    public void user_adds_event_end_date_and_time() {
+    @And("User adds Event end day date and time")
+    public void userAddsEventEndDayDateAndTime() {
         String endDate = "09/04/2022";
         String endTime = "12:30 am";
         eventPage.endDate.clear();
@@ -41,18 +47,19 @@ public class EventStepDef {
         eventPage.endTime.clear();
         eventPage.endTime.sendKeys(endTime);
     }
-
-    @When("User clicks {string}")
-    public void user_clicks(String timeZone) {
+    @When("User clicks {string} checkbox")
+    public void userClicksCheckbox(String allDay) {
+        eventPage.allDayCheckBox.click();
+    }
+    @When("User clicks {string} box")
+    public void userClicksBox(String timeZone) {
         eventPage.SpecifyTimezone.click();
         Select slc = new Select(eventPage.fromTimeZone);
         slc.selectByValue("America/Dawson");
         slc = new Select(eventPage.toTimeZone);
         slc.selectByValue("Europe/London");
-    }
-    @When("User clicks {string} checkbox")
-    public void userClicksCheckbox(String allDay) {
-        eventPage.allDayCheckBox.click();
+
+
     }
 
 
@@ -82,6 +89,7 @@ public class EventStepDef {
     }
 
 
+
     @Given("User clicks “Set reminder” checkbox")
     public void user_clicks_set_reminder_checkbox() {
 
@@ -102,7 +110,99 @@ public class EventStepDef {
         select.selectByValue("day");
 
     }
+    @When("User clears the number box")
+    public void userClearsTheNumberBox() {
+        eventPage.setReminderBox.clear();
+    }
 
+
+    @Then("User should not see much {string} in number box")
+    public void userShouldNotSeeMuchInNumberBox(String number) {
+
+        //eventPage.setReminderBox.sendKeys(number);
+        String expected="366";
+        String actual=number;
+        System.out.println("actual = " + actual);
+        System.out.println("expected = " + expected);
+        Assert.assertEquals(actual,expected);
+
+
+    }
+
+
+    @When("User clicks {string} button")
+    public void userClicksButton(String meetingRoom) {
+        eventPage.eventLocation.click();
+    }
+    @When("User chooses {string} from dropdown")
+    public void userChoosesFromDropdown(String chosenRoom) {
+        eventPage.eventLocation.sendKeys("Central Meeting Room");
+
+    }
+    @Then("User sees the chosen room on {string} box")
+    public void userSeesTheChosenRoomOnBox(String room) {
+        Assert.assertTrue(eventPage.eventLocation.isDisplayed());
+    }
+
+
+    @When("User click Members box")
+    public void userClickMembersBox() {
+        eventPage.memberButton.click();
+    }
+    @When("User add attendees by{string}")
+    public void userAddAttendeesBy(String individual) {
+        // eventPage.memberButton.sendKeys("helpdesk22@cybertekschool.com");
+        Actions actions=new Actions(Driver.getDriver());
+        actions.moveToElement(eventPage.chosen1).click();
+
+    }
+    @And("User clicks the {string}button")
+    public void userClicksTheButton(String popUpButton) {
+        eventPage.popUpButton.click();
+    }
+    @Then("User sees selected person on the member box")
+    public void userSeesSelectedPersonOnTheMemberBox() {
+        Assert.assertTrue(eventPage.memberButton.isDisplayed());
+    }
+
+    @When("user adds attendees by {string}")
+    public void userAddsAttendeesBy(String allEmployees) {
+        Actions actions=new Actions(Driver.getDriver());
+        actions.moveToElement(eventPage.allEmployees).click();
+
+
+
+    }
+    @Then("User sees selected groups and department on the member box")
+    public void userSeesSelectedGroupsAndDepartmentOnTheMemberBox() {
+        Assert.assertTrue(eventPage.memberButton.isDisplayed());
+    }
+
+    @When("User fills out Message Box with {string}")
+    public void userFillsOutMessageBoxWith(String cpd) {
+        eventPage.messageBox.sendKeys(cpd);
+    }
+    @Then("User sees  event name on the Active Stream")
+    public void userSeesEventNameOnTheActiveStream() {
+        eventPage.eventName.isDisplayed();
+    }
+    @When("User clicks the cancel button")
+    public void userClicksTheCancelButton() {
+        eventPage.cancelButton.click();
+    }
+
+
+    @When("user clicks More")
+    public void userClicksMore() {
+        eventPage.moreButton.click();
+    }
+    @Then("the following event details parameters should be displayed")
+    public void theFollowingEventDetailsParametersShouldBeDisplayed(List<String> expectedList) {
+
+        List<String> actualList = BrowserUtils.getElementsText( eventPage.checklist);
+        Assert.assertEquals(expectedList,actualList);
+
+    }
 
 
 

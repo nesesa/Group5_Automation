@@ -3,16 +3,16 @@ Feature: to create events by clicking on Event tab under Active Stream
 
   Background:
     Given User is on Home Page
+    When User navigates to Event tab
+
+  Scenario: User should be able to add Event start
+  and ending date and time, select "All day" and specify the time zone.
+    When User adds Event star  date and time
+    And  User adds Event end day date and time
+    When User clicks "Specify time zone" box
+    When User clicks "All Day" checkbox
 
 
-    Scenario: User should be able to add Event start
-    and ending date and time, select "All day" and specify the time zone.
-
-      Given User navigates to Event tab
-      When  User adds Event start date and time
-      And   User adds Event end date and time
-      When  User clicks "Specify time zone"
-      When  User clicks "All Day" checkbox
 
   Scenario: User should  choose  valid date
     When User navigates to Event tab
@@ -26,6 +26,14 @@ Feature: to create events by clicking on Event tab under Active Stream
     Given User clicks “Set reminder” checkbox
     When User fills out  "number" to the number box
     When User chooses "days" from time dropdown
+
+  Scenario: User should be able to set reminder at most 365
+    Given User clicks “Set reminder” checkbox
+    When User fills out  "number" to the number box
+    When User chooses "days" from time dropdown
+    When User clears the number box
+    Then User should not see much "365" in number box
+
 
   Scenario: User should be able to select the event location from the dropdown
     When User clicks "select meeting room" button
@@ -64,8 +72,3 @@ Feature: to create events by clicking on Event tab under Active Stream
       | Repeat       |
       | Calendar     |
       | Importance   |
-
-
-
-
-
