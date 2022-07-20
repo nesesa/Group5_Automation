@@ -16,82 +16,82 @@ public class MessageTagsPage {
 
 
     @FindBy(xpath = "//span[.='Message']/span")
-    public WebElement messagesTab;
+    public static WebElement messagesTab;
 
     @FindBy(xpath = "//span[@id='bx-b-mention-blogPostForm']")
-    public WebElement mentionButton;
+    public static WebElement mentionButton;
 
     @FindBy(xpath = "//a[contains(@id,\"destDepartmentTab\")]")
-    public WebElement employeesAndDepartmentsButton;
+    public static WebElement employeesAndDepartmentsButton;
 
     @FindBy(xpath = "(//div[@class='bx-finder-company-department-employee-name'])[1]")
-    public List<WebElement> employeeUsernames;
+    public static List<WebElement> employeeUsernames;
 
     @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a[contains(text(),\"cybertekschool\")]")
-    public WebElement verifyMention;
+    public static WebElement verifyMention;
 
     @FindBy(xpath = "(//iframe[@class='bx-editor-iframe'])[1]")
-    public WebElement messagesIframe;
+    public static WebElement messagesIframe;
 
     @FindBy(xpath = "//body")
-    public WebElement messagesInput;
+    public static WebElement messagesInput;
 
     @FindBy(id = "blog-submit-button-save")
-    public WebElement sendButton;
+    public static WebElement sendButton;
 
     @FindBy(xpath = "//span[@title='Link']")
-    public WebElement linkButton;
+    public static WebElement linkButton;
 
     @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-text']")
-    public WebElement inputText;
+    public static WebElement inputText;
 
     @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-href']")
-    public WebElement inputUrl;
+    public static WebElement inputUrl;
 
     @FindBy(xpath = "//input[@value='Save']")
-    public WebElement saveButton;
+    public static WebElement saveButton;
 
     @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a")
-    public WebElement actualLinkText;
+    public static WebElement actualLinkText;
 
     @FindBy(xpath = "//span[@title='Insert video']")
-    public WebElement insertVideoButton;
+    public static WebElement insertVideoButton;
 
     @FindBy(xpath = "//input[@class='bxhtmled-90-input']")
-    public WebElement videoInputBox;
+    public static WebElement videoInputBox;
 
     @FindBy(xpath = "//input[@class='adm-btn-save']")
-    public WebElement videoSaveButton;
+    public static WebElement videoSaveButton;
 
     @FindBy(xpath = "//body[text()]")
-    public WebElement actualInputInMessagesBox;
+    public static WebElement actualInputInMessagesBox;
 
     @FindBy(xpath = "//span[@title='Quote text']")
-    public WebElement quoteTextButton;
+    public static WebElement quoteTextButton;
 
     @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
-    public WebElement getQuoteTextRibbon;
+    public static WebElement getQuoteTextRibbon;
 
     @FindBy(xpath = "//div[@class='blog-post-quote']//td")
-    public WebElement actualQuote;
+    public static WebElement actualQuote;
 
     @FindBy(xpath = "//span[@title='Add tag']")
-    public WebElement addTagButton;
+    public static WebElement addTagButton;
 
     @FindBy(xpath = "//input[@name='TAGS_blogPostForm']")
-    public WebElement tagTextInput;
+    public static WebElement tagTextInput;
 
     @FindBy(xpath = "//span[@class='popup-window-button']")
-    public WebElement tagAddButton;
+    public static WebElement tagAddButton;
 
     @FindBy(xpath = "//a[@class='feed-com-tag']")
-    public WebElement actualTag;
+    public static WebElement actualTag;
 
     @FindBy(xpath = "(//span[@class='feed-add-post-del-but'])[2]")
-    public WebElement tagDeleteButton;
+    public static WebElement tagDeleteButton;
 
     @FindBy(xpath = "//div[@class='feed-post-text-block']")
-    public WebElement tagLocator;
+    public static WebElement tagLocator;
 
 
 
