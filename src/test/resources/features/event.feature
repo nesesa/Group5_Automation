@@ -33,7 +33,7 @@ Feature: to create events by clicking on Event tab under Active Stream
     Given User clicks “Set reminder” checkbox
     When User fills out  "letters" to the number box
     When User chooses "days" from time dropdown
-    Then User should  see  "numbers" in number box
+    Then User should not see  "letters" in number box
 
 
   Scenario: User should be able to select the event location from the dropdown

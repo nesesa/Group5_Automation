@@ -137,17 +137,16 @@ public class EventStepDef {
     public void userClearsTheNumberBox() {
         eventPage.setReminderBox.clear();
     }
-    @Then("User should  see  {string} in number box")
-    public void userShouldSeeInNumberBox(String numbers) {
+    @Then("User should not see  {string} in number box")
+    public void userShouldNotSeeInNumberBox(String letters) {
 
-       // eventPage.setReminderBox.sendKeys(letter);
         String expected="abc";
         String actual=eventPage.setReminderBox.getText();
-       System.out.println("actual = " + actual);
-       System.out.println("expected = " + expected);
+        System.out.println("actual = " + actual);
+        System.out.println("expected = " + expected);
         Assert.assertEquals(actual,expected);
-
     }
+
 
 
     @When("User clicks {string} button")
