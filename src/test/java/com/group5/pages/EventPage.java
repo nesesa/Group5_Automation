@@ -44,7 +44,7 @@ public class EventPage {
 
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public  WebElement sendButton;
-    @FindBy(xpath = "//span[contains(text(),'05/15/2022')]")
+    @FindBy(xpath = "//span[contains(text(),'05/15/2022, 09:30 am')]")
     public  WebElement activeStreamDisplay;
 
 

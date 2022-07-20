@@ -1,4 +1,4 @@
-@wip
+
 Feature: to create events by clicking on Event tab under Active Stream
 
   Background:
@@ -13,25 +13,26 @@ Feature: to create events by clicking on Event tab under Active Stream
     When User clicks "All Day" checkbox
 
 
-
-  Scenario: User should  choose  valid date
+@wip
+  Scenario: User should  choose  invalid date
     When User navigates to Event tab
-    When User adds  "05/15/2022" star date
-    When User clicks "All Day" checkbox
+    When User adds  "invalid" star date
+    When User adds time
+    And  User adds Event "invalid end day date" and time
     When User clicks the send button
-    Then User sees the  "07/15/2022" on Active Stream
+    Then User sees the  "05/15/2022, 09:00 am " on Active Stream
 
 
   Scenario: User should be able to set reminder
     Given User clicks “Set reminder” checkbox
+    When User clears the number box
     When User fills out  25 to the number box
     When User chooses "days" from time dropdown
 
-  Scenario: User should be able to set reminder at most 365
+  Scenario: User should be able to set reminder only with number
     Given User clicks “Set reminder” checkbox
     When User fills out  "letter" to the number box
     When User chooses "days" from time dropdown
-    When User clears the number box
     Then User should not see much "letter" in number box
 
 

@@ -19,8 +19,8 @@ public class EventStepDef {
     @Given("User is on Home Page")
     public void userIsOnHomePage() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        eventPage.inputEmail.sendKeys("helpdesk1@cybertekschool.com");
-        eventPage.inputPassword.sendKeys("UserUser");
+       eventPage.inputEmail.sendKeys(ConfigurationReader.getProperty("username"));
+        eventPage.inputPassword.sendKeys(ConfigurationReader.getProperty("password"));
         eventPage.logInButton.click();
     }
     @When("User navigates to Event tab")
@@ -65,25 +65,43 @@ public class EventStepDef {
 
     @When("User adds  {string} star date")
     public void userAddsStarDate(String date) {
-
         eventPage.startDate.clear();
-        String startDate = "05/15/2022";
-        eventPage.startDate.sendKeys(startDate);
+        date = "05/15/2022";
+        eventPage.startDate.sendKeys(date);
 
+    }
+    @When("User adds time")
+    public void userAddsTime() {
+        BrowserUtils.sleep(3);
+        eventPage.startTime.clear();
+        eventPage.startTime.sendKeys("09:00am");
+    }
 
+    @And("User adds Event {string} and time")
+    public void userAddsEventAndTime(String invalidEndDate) {
+        BrowserUtils.sleep(5);
+        eventPage.endDate.clear();
+        BrowserUtils.sleep(2);
+        invalidEndDate="07/15/2022";
+        eventPage.endDate.sendKeys(invalidEndDate);
+
+        eventPage.endTime.clear();
+        eventPage.endTime.sendKeys("03:00pm");
     }
     @When("User clicks the send button")
     public void userClicksTheSendButton() {
+        BrowserUtils.sleep(2);
         eventPage.sendButton.click();
     }
     @Then("User sees the  {string} on Active Stream")
     public void userSeesTheOnActiveStream(String date) {
-        String expected="07/15/2022";
+        String expected="05/15/2022, 09:00 am ";
+        BrowserUtils.sleep(2);
         String actual=eventPage.activeStreamDisplay.getText();
-
-        Assert.assertEquals(actual,expected);
         System.out.println("actual = " + actual);
         System.out.println("expected = " + expected);
+        Assert.assertEquals(actual,expected);
+
 
 
     }
@@ -119,8 +137,6 @@ public class EventStepDef {
     public void userClearsTheNumberBox() {
         eventPage.setReminderBox.clear();
     }
-
-
     @Then("User should not see much {string} in number box")
     public void userShouldNotSeeMuchInNumberBox(String letter) {
 
@@ -204,6 +220,7 @@ public class EventStepDef {
     }
     @Then("the following event details parameters should be displayed")
     public void theFollowingEventDetailsParametersShouldBeDisplayed(List<String> expectedList) {
+        BrowserUtils.sleep(2);
 
         List<String> actualList = BrowserUtils.getElementsText( eventPage.checklist);
         Assert.assertEquals(expectedList,actualList);
