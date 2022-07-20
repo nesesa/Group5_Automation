@@ -13,7 +13,7 @@ Feature: to create events by clicking on Event tab under Active Stream
     When User clicks "All Day" checkbox
 
 
-@wip
+
   Scenario: User should  choose  invalid date
     When User navigates to Event tab
     When User adds  "invalid" star date
@@ -28,12 +28,12 @@ Feature: to create events by clicking on Event tab under Active Stream
     When User clears the number box
     When User fills out  25 to the number box
     When User chooses "days" from time dropdown
-
+  @wip
   Scenario: User should be able to set reminder only with number
     Given User clicks “Set reminder” checkbox
-    When User fills out  "letter" to the number box
+    When User fills out  "letters" to the number box
     When User chooses "days" from time dropdown
-    Then User should not see much "letter" in number box
+    Then User should  see  "numbers" in number box
 
 
   Scenario: User should be able to select the event location from the dropdown
