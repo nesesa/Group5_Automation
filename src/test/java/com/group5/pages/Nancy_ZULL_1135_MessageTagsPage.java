@@ -7,9 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class MessageTagsPage {
+public class Nancy_ZULL_1135_MessageTagsPage {
 
-    public void BasePage() {
+    public Nancy_ZULL_1135_MessageTagsPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }

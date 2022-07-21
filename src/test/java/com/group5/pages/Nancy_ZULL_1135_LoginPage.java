@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MessageTags_LoginPage {
+public class Nancy_ZULL_1135_LoginPage {
 
-    public void LogInPage (){
+    public Nancy_ZULL_1135_LoginPage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
 
