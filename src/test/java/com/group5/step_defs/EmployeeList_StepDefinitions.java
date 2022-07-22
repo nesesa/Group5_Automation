@@ -21,15 +21,18 @@ public class EmployeeList_StepDefinitions {
         String url = ConfigurationReader.getProperty("web.url");
         Driver.getDriver().get(url);
     }
+
     @When("user enters marketing username")
     public void user_enters_marketing_username() {
         employeeListPage.inputUsername.sendKeys(ConfigurationReader.getProperty("username"));
 
     }
+
     @When("user enters marketing password")
     public void user_enters_marketing_password() {
         employeeListPage.inputPassword.sendKeys(ConfigurationReader.getProperty("password"));
     }
+
     @Then("user should see the dashboard")
     public void user_should_see_the_dashboard() {
 
@@ -37,22 +40,24 @@ public class EmployeeList_StepDefinitions {
     }
 
 
-
     @Given("user is logged in as Marketing employee")
     public void user_is_logged_in_as_marketing_employee() {
         System.out.println("User is logged in");
 
     }
+
     @Then("user navigates to Employees link")
     public void user_navigates_to_employees_link() {
 
         employeeListPage.employeeLink.click();
     }
+
     @Then("user clicks on the Find Employee")
     public void user_clicks_on_the_find_employee() {
 
         employeeListPage.findEmployee.click();
     }
+
     @Then("user sees Employee List")
     public void user_sees_employee_list() {
 
@@ -93,6 +98,7 @@ public class EmployeeList_StepDefinitions {
 
         employeeListPage.searchBox.click();
     }
+
     @Then("verify that user is able to find employees by search box")
     public void verify_that_user_is_able_to_find_employees_by_search_box() {
 
@@ -101,8 +107,6 @@ public class EmployeeList_StepDefinitions {
         employeeListPage.searchBoxTab.sendKeys(Keys.ENTER);
 
         Assert.assertTrue(employeeListPage.searchBoxUser.isDisplayed());
-
-
 
 
     }

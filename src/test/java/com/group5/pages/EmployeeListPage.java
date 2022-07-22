@@ -12,8 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 public class EmployeeListPage {
 
 
-
-
     public EmployeeListPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -67,8 +65,6 @@ public class EmployeeListPage {
     public WebElement searchBoxUser;
 
 
-
-
     public void login() {
         inputUsername.sendKeys(ConfigurationReader.getProperty("username"));
         inputPassword.sendKeys(ConfigurationReader.getProperty("password"));
@@ -87,7 +83,6 @@ public class EmployeeListPage {
         loginButton.click();
 
     }
-
 
 
 
