@@ -21,7 +21,7 @@ public class Nancy_ZULL_1135_MessageTags_Step_Definition {
     Faker faker = new Faker();
 
     /**
-     * Pre-Conditions
+     * Pre-Conditionss
      */
     @Given("User is on homepage")
     public void user_is_on_homepage() {
