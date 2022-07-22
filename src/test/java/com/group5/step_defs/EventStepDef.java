@@ -19,7 +19,7 @@ public class EventStepDef {
     @Given("User is on Home Page")
     public void userIsOnHomePage() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-       eventPage.inputEmail.sendKeys(ConfigurationReader.getProperty("username"));
+        eventPage.inputEmail.sendKeys(ConfigurationReader.getProperty("username"));
         eventPage.inputPassword.sendKeys(ConfigurationReader.getProperty("password"));
         eventPage.logInButton.click();
     }
@@ -137,9 +137,8 @@ public class EventStepDef {
     public void userClearsTheNumberBox() {
         eventPage.setReminderBox.clear();
     }
-    @Then("User should not see  {string} in number box")
-    public void userShouldNotSeeInNumberBox(String letters) {
-
+    @Then("User does not see  {string} in number box")
+    public void userDoesNotSeeInNumberBox(String letters) {
         String expected="abc";
         String actual=eventPage.setReminderBox.getText();
         System.out.println("actual = " + actual);
