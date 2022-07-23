@@ -8,7 +8,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
 
 
 
-  @AC1 @wip
+  @AC1
     Scenario: Adding mentions about only department employees.
       When User is on MESSAGE page
       And User click Add Mention button
@@ -17,20 +17,19 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       And User clicks SEND button on Message page
       Then User sees that Employee mail address on Activity Stream page
 
-  @AC2
+  @AC2 @wip
   Scenario Outline: Attaching a link to the specified text.
     When User is on MESSAGE page
     And User click Link button
     And User write a description into the "<Text>" label
     And User write the link about the description into the "<Link>" label
     And User clicks Save button
+    And User clicks SEND button on Message page
     Then User sees the "<Text>" is written as a link in the Message box
-    And User takes his mouse over the "<Text>" in the Message box
-    Then User sees the "<Link>" that he wrote into the Link box before
 
     Examples: Users enters texts and links written below
 
-    |Text           |Link|
+    |Text           |Link                           |
     |ITU Mech. Eng. |https://mkn.itu.edu.tr/en/home |
     |Google         |https://www.google.com/        |
     |Yandex         |https://ceviri.yandex.com.tr/  |

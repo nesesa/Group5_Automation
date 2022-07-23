@@ -40,18 +40,33 @@ public class MainPage_Zull1127_Mustafa {
     public static WebElement ActualMailAddress;
 
 
-
-
-
-
-
-
-
-
     // AC2
 
     @FindBy(xpath = "//span[@title=\"Link\"]")
-    public WebElement Link;
+    public static WebElement Link;
+
+    @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-text']")
+    public static WebElement LinkText;
+
+    @FindBy(xpath = "//input[@id='linkidPostFormLHE_blogPostForm-href']")
+    public static WebElement LinkURL;
+
+    @FindBy(xpath = "//input[@id='undefined']")
+    public static WebElement SaveButton;
+
+    @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a")
+    public static WebElement ActualText;
+
+
+
+
+
+
+
+
+
+
+
 
     // AC3
 
