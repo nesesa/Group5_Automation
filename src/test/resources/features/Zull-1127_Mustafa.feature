@@ -17,7 +17,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       And User clicks SEND button on Message page
       Then User sees that Employee mail address on Activity Stream page
 
-  @AC2 @wip
+  @AC2
   Scenario Outline: Attaching a link to the specified text.
     When User is on MESSAGE page
     And User click Link button
@@ -35,7 +35,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     |Yandex         |https://ceviri.yandex.com.tr/  |
 
 
-  @AC3
+  @AC3 @wip
   Scenario Outline:Inserting YouTube and Vimeo videos.
     When User is on MESSAGE page
     And User click Insert Video button
@@ -46,9 +46,11 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
 
     Examples: Users enters links written below
 
-    |URL|
-    |https://www.youtube.com/watch?v=CYYtLXfquy0  |
+    |URL                                          |
     |https://vimeo.com/249226357                  |
+    |https://www.youtube.com/watch?v=CYYtLXfquy0  |
+
+
 
 
   @AC4

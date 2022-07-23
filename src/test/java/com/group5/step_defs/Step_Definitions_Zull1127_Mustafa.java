@@ -30,6 +30,7 @@ public class Step_Definitions_Zull1127_Mustafa {
 
     @When("User login username")
     public void user_login_username() {
+        loginPageMustafa.Username.clear();
         loginPageMustafa.Username.sendKeys("helpdesk1@cybertekschool.com");
     }
 
@@ -43,14 +44,16 @@ public class Step_Definitions_Zull1127_Mustafa {
         loginPageMustafa.Login.click();
     }
 
-    /**
-     * AC1
-     */
-
     @When("User is on MESSAGE page")
     public void user_is_on_message_page() {
         MainPage_Zull1127_Mustafa.MessageButton.click();
     }
+
+    /**
+     * AC1
+     */
+
+
 
     @When("User click Add Mention button")
     public void user_click_add_mention_button() {
@@ -115,8 +118,37 @@ public class Step_Definitions_Zull1127_Mustafa {
             Assert.assertEquals(text,MainPage_Zull1127_Mustafa.ActualText.getText());
         }
 
+    /**
+     * AC3
+     */
 
-        }
+    @When("User click Insert Video button")
+    public void user_click_insert_video_button() {
+        MainPage_Zull1127_Mustafa.InsertVideo.click();
+    }
+
+    @And("User enter {string} address of a YouTube video and a Vimeo video")
+    public void userEnterAddressOfAYouTubeVideoAndAVimeoVideoFrom(String videoURL) {
+        MainPage_Zull1127_Mustafa.VideoSourceText.sendKeys(videoURL);
+        BrowserUtils.sleep(3);
+    }
+
+    @When("User clicks Save button on the opened popup")
+    public void user_clicks_save_button_on_the_opened_popup() {
+        MainPage_Zull1127_Mustafa.VideoSaveButton.click();
+        BrowserUtils.sleep(3);
+    }
+
+    @Then("User sees the video on Activity Stream")
+    public void user_sees_the_video_on_activity_stream() {
+        Driver.getDriver().switchTo().frame(MainPage_Zull1127_Mustafa.VideoIframe);
+        Assert.assertTrue(MainPage_Zull1127_Mustafa.actualInputInMessagesBox.isDisplayed());
+
+    }
+
+
+
+}
 
 
 

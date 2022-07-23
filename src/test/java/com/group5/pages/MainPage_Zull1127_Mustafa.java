@@ -13,7 +13,7 @@ public class MainPage_Zull1127_Mustafa {
 
     // Message Page Login
 
-    @FindBy(xpath = "//span[@id=\"feed-add-post-form-tab-message\"]/span")
+    @FindBy(xpath = "//span[.='Message']/span")
     public static WebElement MessageButton;
 
 
@@ -57,21 +57,31 @@ public class MainPage_Zull1127_Mustafa {
     @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a")
     public static WebElement ActualText;
 
-
-
-
-
-
-
-
-
-
-
-
     // AC3
 
-    @FindBy(xpath = "//span[@title=\"Insert video\"]")
-    public WebElement InsertVideo;
+    @FindBy(xpath = "//span[@id='bx-b-video-blogPostForm']/span/i")
+    public static WebElement InsertVideo;
+
+    @FindBy(xpath = "//input[@id='video_idPostFormLHE_blogPostForm-source']")
+    public static WebElement VideoSourceText;
+
+    @FindBy(xpath = "//input[@id='undefined']")
+    public static WebElement VideoSaveButton;
+
+    @FindBy(xpath = "//iframe[@class='bx-editor-iframe'][1]")
+    public static WebElement VideoIframe;
+
+    @FindBy(xpath = "//body[text()]")
+    public static WebElement actualInputInMessagesBox;
+
+
+
+
+
+
+
+
+
 
     // AC4
 
