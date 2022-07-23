@@ -141,10 +141,39 @@ public class Step_Definitions_Zull1127_Mustafa {
 
     @Then("User sees the video on Activity Stream")
     public void user_sees_the_video_on_activity_stream() {
-        Driver.getDriver().switchTo().frame(MainPage_Zull1127_Mustafa.VideoIframe);
+        Driver.getDriver().switchTo().frame(MainPage_Zull1127_Mustafa.Iframe);
         Assert.assertTrue(MainPage_Zull1127_Mustafa.actualInputInMessagesBox.isDisplayed());
+    }
+
+    /**
+     * AC4
+     */
+
+    @When("User click Quote Text button")
+    public void user_click_quote_text_button() {
+        MainPage_Zull1127_Mustafa.QuoteButton.click();
+    }
+
+    @When("User write a {string} into the highlighted row")
+    public void user_write_a_into_the_highlighted_row(String quote) {
+
+        Driver.getDriver().switchTo().frame(MainPage_Zull1127_Mustafa.Iframe);
+
+        MainPage_Zull1127_Mustafa.QuoteTextBox.sendKeys(quote);
+
+        Driver.getDriver().switchTo().defaultContent();
+
 
     }
+
+    @Then("User sees the {string} in Activity Stream")
+    public void user_sees_the_in_activity_stream(String quote) {
+
+        BrowserUtils.sleep(3);
+        Assert.assertEquals(quote, MainPage_Zull1127_Mustafa.actualQuote.getText());
+
+    }
+
 
 
 

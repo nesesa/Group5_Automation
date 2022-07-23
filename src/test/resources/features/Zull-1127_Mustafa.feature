@@ -35,7 +35,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     |Yandex         |https://ceviri.yandex.com.tr/  |
 
 
-  @AC3 @wip
+  @AC3
   Scenario Outline:Inserting YouTube and Vimeo videos.
     When User is on MESSAGE page
     And User click Insert Video button
@@ -51,9 +51,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     |https://www.youtube.com/watch?v=CYYtLXfquy0  |
 
 
-
-
-  @AC4
+  @AC4 @wip
   Scenario Outline:Adding quotes.
     When User is on MESSAGE page
     And User click Quote Text button

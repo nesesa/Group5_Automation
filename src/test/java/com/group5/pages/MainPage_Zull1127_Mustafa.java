@@ -69,28 +69,36 @@ public class MainPage_Zull1127_Mustafa {
     public static WebElement VideoSaveButton;
 
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe'][1]")
-    public static WebElement VideoIframe;
+    public static WebElement Iframe;
 
     @FindBy(xpath = "//body[text()]")
     public static WebElement actualInputInMessagesBox;
 
-
-
-
-
-
-
-
-
-
     // AC4
 
-    @FindBy(xpath = "//span[@title=\"Quote text\"]")
-    public WebElement QuoteText;
+    @FindBy(xpath = "//span[@title='Quote text']")
+    public static WebElement QuoteButton;
+
+    @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
+    public static WebElement QuoteTextBox;
+
+    @FindBy(xpath = "(//div[@class='blog-post-quote']//td)[1]")
+    public static WebElement actualQuote;
+
+
+
+
+
+
+
+
+
+
+
 
     // AC5
 
-    @FindBy(xpath = "//span[@title=\"Add tag\"]")
+    @FindBy(xpath = "//span[@title='Add tag']")
     public WebElement AddTag;
 
     // AC6
