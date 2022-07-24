@@ -1,4 +1,4 @@
-
+@wip
 Feature: to create events by clicking on Event tab under Active Stream
 
   Background:
@@ -28,7 +28,7 @@ Feature: to create events by clicking on Event tab under Active Stream
     When User clears the number box
     When User fills out  25 to the number box
     When User chooses "days" from time dropdown
-  @wip
+
   Scenario: User should be able to set reminder only with number
     Given User clicks “Set reminder” checkbox
     When User fills out  "letters" to the number box
