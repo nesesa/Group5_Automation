@@ -1,5 +1,6 @@
 package com.group5.step_defs;
 
+import com.github.javafaker.Faker;
 import com.group5.pages.BasePage;
 import com.group5.pages.LoginPageMustafa;
 import com.group5.pages.MainPage_Zull1127_Mustafa;
@@ -18,6 +19,7 @@ public class Step_Definitions_Zull1127_Mustafa {
     BasePage basePage=new BasePage();
     LoginPageMustafa loginPageMustafa = new LoginPageMustafa();
     MainPage_Zull1127_Mustafa mainPage_zull1127_mustafa=new MainPage_Zull1127_Mustafa();
+    Faker faker = new Faker();
 
     /**
      * Background MainPage Login
@@ -149,12 +151,12 @@ public class Step_Definitions_Zull1127_Mustafa {
      * AC4
      */
 
-    @When("User click Quote Text button")
+    @When("User clicks Quote Text button")
     public void user_click_quote_text_button() {
         MainPage_Zull1127_Mustafa.QuoteButton.click();
     }
 
-    @When("User write a {string} into the highlighted row")
+    @When("User writes a {string} into the highlighted row")
     public void user_write_a_into_the_highlighted_row(String quote) {
 
         Driver.getDriver().switchTo().frame(MainPage_Zull1127_Mustafa.Iframe);
@@ -162,8 +164,6 @@ public class Step_Definitions_Zull1127_Mustafa {
         MainPage_Zull1127_Mustafa.QuoteTextBox.sendKeys(quote);
 
         Driver.getDriver().switchTo().defaultContent();
-
-
     }
 
     @Then("User sees the {string} in Activity Stream")
@@ -171,12 +171,46 @@ public class Step_Definitions_Zull1127_Mustafa {
 
         BrowserUtils.sleep(3);
         Assert.assertEquals(quote, MainPage_Zull1127_Mustafa.actualQuote.getText());
-
     }
 
+    /**
+     * AC5
+     */
 
+    @When("User writes something into the message box")
+    public void user_writes_something_into_the_message_box() {
 
+        Driver.getDriver().switchTo().frame(MainPage_Zull1127_Mustafa.Iframe);
 
+        mainPage_zull1127_mustafa.messageInputRow.sendKeys(faker.shakespeare().hamletQuote());
+
+        Driver.getDriver().switchTo().defaultContent();
+    }
+
+    @When("User click Add Tag button")
+    public void user_click_add_tag_button() {
+
+        mainPage_zull1127_mustafa.addTag.click();
+    }
+
+    @When("User writes {string} into the highlighted row")
+    public void user_writes_into_the_highlighted_row(String tag) {
+
+        mainPage_zull1127_mustafa.tagInputRow.sendKeys(tag);
+    }
+
+    @When("User click Add button")
+    public void user_click_add_button() {
+
+        mainPage_zull1127_mustafa.tagAddButton.click();
+    }
+
+    @Then("User sees each {string} in Activity Stream")
+    public void userSeesEachInActivityStream(String tag) {
+
+        BrowserUtils.sleep(3);
+        Assert.assertEquals(tag, MainPage_Zull1127_Mustafa.actualTag.getText());
+    }
 }
 
 

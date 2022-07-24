@@ -40,7 +40,9 @@ public class MainPage_Zull1127_Mustafa {
     public static WebElement ActualMailAddress;
 
 
-    // AC2
+    /**
+     * AC2
+     */
 
     @FindBy(xpath = "//span[@title=\"Link\"]")
     public static WebElement Link;
@@ -57,7 +59,9 @@ public class MainPage_Zull1127_Mustafa {
     @FindBy(xpath = "//div[@class='feed-post-text-block-inner-inner']/a")
     public static WebElement ActualText;
 
-    // AC3
+    /**
+     * AC3
+     */
 
     @FindBy(xpath = "//span[@id='bx-b-video-blogPostForm']/span/i")
     public static WebElement InsertVideo;
@@ -74,7 +78,9 @@ public class MainPage_Zull1127_Mustafa {
     @FindBy(xpath = "//body[text()]")
     public static WebElement actualInputInMessagesBox;
 
-    // AC4
+    /**
+     * AC14
+     */
 
     @FindBy(xpath = "//span[@title='Quote text']")
     public static WebElement QuoteButton;
@@ -85,21 +91,35 @@ public class MainPage_Zull1127_Mustafa {
     @FindBy(xpath = "(//div[@class='blog-post-quote']//td)[1]")
     public static WebElement actualQuote;
 
-
-
-
-
-
-
-
-
-
-
-
-    // AC5
+    /**
+     * AC5
+     */
 
     @FindBy(xpath = "//span[@title='Add tag']")
-    public WebElement AddTag;
+    public static WebElement addTag;
+
+    @FindBy(xpath = "//input[@name='TAGS_blogPostForm']")
+    public WebElement tagInputRow;
+
+    @FindBy(xpath = "//span[@class='popup-window-button']")
+    public WebElement tagAddButton;
+
+    @FindBy(xpath = "(//a[@class='feed-com-tag'])[1]")
+    public static WebElement actualTag;
+
+    @FindBy(xpath = "//body")
+    public static WebElement messageInputRow;
+
+    @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
+    public WebElement messageVerify;
+
+
+
+
+
+
+
+
 
     // AC6
 

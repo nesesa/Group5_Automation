@@ -51,11 +51,11 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     |https://www.youtube.com/watch?v=CYYtLXfquy0  |
 
 
-  @AC4 @wip
+  @AC4
   Scenario Outline:Adding quotes.
     When User is on MESSAGE page
-    And User click Quote Text button
-    And User write a "<Quotes>" into the highlighted row
+    And User clicks Quote Text button
+    And User writes a "<Quotes>" into the highlighted row
     And User clicks SEND button on Message page
     Then User sees the "<Quotes>" in Activity Stream
 
@@ -67,7 +67,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       | Seyfullah Ornek |
 
 
-  @AC5
+  @AC5 @wip
   Scenario Outline:Adding tags to messages.
     When User is on MESSAGE page
     And User writes something into the message box
@@ -75,7 +75,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     And User writes "<Tags>" into the highlighted row
     And User click Add button
     And User clicks SEND button on Message page
-    Then User sees the "<Tags>" in Activity Stream
+    Then User sees each "<Tags>" in Activity Stream
 
     Examples: Users enters Quotes written below
 
@@ -83,7 +83,8 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       | Isparta   |
       | Antalya   |
       | Istanbul  |
-      | Ankara    |
+
+
 
   @AC6
   Scenario Outline:Removing tags before sending the message.
