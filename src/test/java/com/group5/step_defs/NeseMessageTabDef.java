@@ -68,17 +68,15 @@ public class NeseMessageTabDef {
 
     }
 
-    @Then("user sees {string}")
-    public void useSee(String string) {
-
-
+    @Then("User sees error {string}")
+    public void userSeesError(String string) {
         System.out.println("Please specify at least one person.");
         NeseMessageTabPage.recipient.click();
-        //BrowserUtils.sleep(2);
-        Assert.assertTrue(NeseMessageTabPage.textError.isDisplayed()); ;
+        BrowserUtils.waitForVisibility(NeseMessageTabPage.textError,5);
+        Assert.assertTrue(NeseMessageTabPage.textError.getText().equals(string));
+
 
     }
-
 
 
     /**

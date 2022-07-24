@@ -13,7 +13,7 @@ Feature: AzulCRM verifying sending message functionality by clicking on Message 
      And User sees "The message title is not specified"
      And User removes  All Employees button
      And User clicks on send message button
-     Then User sees "Please specify at least one person."
+     Then User sees error "Please specify at least one person."
 
  @AC2
   Scenario: User should be able to see message delivery should be to 'All employees' option by default and should be changeable

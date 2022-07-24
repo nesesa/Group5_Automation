@@ -54,7 +54,7 @@ public class NeseMessageTabPage {
     @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
     public WebElement recipient;
 
-    @FindBy(xpath ="//a[@id='feed-post-menuanchor-1846'] ")
+    @FindBy(xpath =" (//span[contains(text(),'More')])[3]")
     public WebElement moreBtn2;
 
     @FindBy(xpath = "//span[contains(text(),'Delete')]")
