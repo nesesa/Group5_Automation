@@ -8,7 +8,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
 
 
 
-  @AC1 @wip
+  @AC1
     Scenario: Adding mentions about only department employees.
       When User is on MESSAGE page
       And User click Add Mention button

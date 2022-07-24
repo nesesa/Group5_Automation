@@ -1,5 +1,5 @@
 
-@wip
+
 Feature: AzulCRM verifying sending message functionality by clicking on Message tab under Active Stream.
 
 
