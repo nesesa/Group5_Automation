@@ -113,15 +113,15 @@ public class MainPage_Zull1127_Mustafa {
     @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
     public WebElement messageVerify;
 
+    /**
+     * AC6
+     */
 
+    @FindBy(xpath = "(//span[@class='feed-add-post-del-but'])[2]")
+    public static WebElement deleteTag;
 
-
-
-
-
-
-
-    // AC6
+    @FindBy(xpath = "(//div[@class='feed-com-tags-block'])[1]")
+    public static WebElement tagLocation;
 
 
 

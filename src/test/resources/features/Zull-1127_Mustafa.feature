@@ -67,7 +67,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       | Seyfullah Ornek |
 
 
-  @AC5 @wip
+  @AC5
   Scenario Outline:Adding tags to messages.
     When User is on MESSAGE page
     And User writes something into the message box
@@ -83,10 +83,11 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
       | Isparta   |
       | Antalya   |
       | Istanbul  |
+      | Ankara    |
 
 
 
-  @AC6
+  @AC6 @wip
   Scenario Outline:Removing tags before sending the message.
     When User is on MESSAGE page
     And User writes something into the message box
@@ -94,6 +95,7 @@ Feature: Functionality of adding link, insert video, mention, quote, add tag in 
     And User writes "<Tags>" into the highlighted row
     And User click Add button
     And User click X sign of the tag text into the Tags row
+    And User clicks SEND button on Message page
     Then User cant see the "<Tags>" in the Tags row
 
 

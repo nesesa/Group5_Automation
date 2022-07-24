@@ -211,6 +211,23 @@ public class Step_Definitions_Zull1127_Mustafa {
         BrowserUtils.sleep(3);
         Assert.assertEquals(tag, MainPage_Zull1127_Mustafa.actualTag.getText());
     }
+
+    /**
+     * AC5
+     */
+
+    @When("User click X sign of the tag text into the Tags row")
+    public void user_click_x_sign_of_the_tag_text_into_the_tags_row() {
+
+        mainPage_zull1127_mustafa.deleteTag.click();
+    }
+
+    @Then("User cant see the {string} in the Tags row")
+    public void user_cant_see_the_in_the_tags_row(String tag) {
+
+        Assert.assertTrue(mainPage_zull1127_mustafa.tagLocation.getText().contains(tag));
+
+    }
 }
 
 
