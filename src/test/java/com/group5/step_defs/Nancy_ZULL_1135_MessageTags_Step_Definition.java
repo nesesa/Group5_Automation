@@ -12,6 +12,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 public class Nancy_ZULL_1135_MessageTags_Step_Definition {
@@ -62,26 +63,33 @@ public class Nancy_ZULL_1135_MessageTags_Step_Definition {
 
     }
 
-    @When("User clicks on first Department Employee username")
-    public void userClicksOnFirstDepartmentEmployeeUsername(String employeeUsername) {
+    @When("User clicks on Department Employee username")
+    public void userclicksondepartmentemployeeusername(String employeeUsername) {
 
-        for (WebElement each : Nancy_ZULL_1135_MessageTagsPage.employeeUsernames) {
+        try {
+            for (WebElement each : Nancy_ZULL_1135_MessageTagsPage.employeeUsernames) {
 
-            if (each.getText().equalsIgnoreCase(employeeUsername))
-                each.click();
+                if (each.getText().equalsIgnoreCase(employeeUsername))
+                    each.click();
+
+            }
+        } catch (StaleElementReferenceException e) {
 
         }
-        //basePage.firstEmployeeUsername.click();
     }
-
     @Then("User sees mentioned Employee username on Activity Stream")
     public void userSeesMentionedEmployeeUsernameOnActivityStream(String employeeUsername) {
 
+        BrowserUtils.sleep(2);
         String expectedResult = employeeUsername;
         String actualResult = Nancy_ZULL_1135_MessageTagsPage.verifyMention.getText();
         Assert.assertEquals(expectedResult, actualResult);
 
     }
+
+
+
+
 
 
     /**
@@ -114,7 +122,7 @@ public class Nancy_ZULL_1135_MessageTags_Step_Definition {
     @Then("User sees the {string} attached to a specific {string}")
     public void userSeesTheAttachedToASpecific(String link, String text) {
 
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(3);
         Assert.assertEquals(text, Nancy_ZULL_1135_MessageTagsPage.actualLinkText.getText());
     }
 
